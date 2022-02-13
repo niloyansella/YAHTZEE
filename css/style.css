@@ -67,6 +67,16 @@ header {
   text-transform: uppercase;
 }
 
+.cta-roll {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  background-color: #2604d3;
+  border-radius: 100px;
+  padding: 15px 40px;
+  text-transform: uppercase;
+  margin-right: 1.5rem;
+}
 /* MODAL AREA */
 
 /* SPEL ------------------------- */
