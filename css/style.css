@@ -113,3 +113,13 @@ header {
 .yahtzee-1 {
   border: 0.4rem solid black;
 }
+
+.dice {
+  height: 100px;
+  margin: 0.8rem;
+}
+
+.rollDice {
+  animation-name: rollDice;
+  animation-duration: 5s;
+}

@@ -1,0 +1,14 @@
+@keyframes rollDice {
+  0% {
+  }
+  20% {
+    transform: rotate(90deg);
+    transition: all 0.5s;
+  }
+  60% {
+    transform: rotate(150deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
