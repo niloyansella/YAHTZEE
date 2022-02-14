@@ -116,10 +116,10 @@ header {
 
 .dice {
   height: 100px;
-  margin: 0.8rem;
+  margin: 1rem;
 }
 
 .rollDice {
   animation-name: rollDice;
-  animation-duration: 5s;
+  animation-duration: 2s;
 }
