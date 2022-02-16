@@ -6,6 +6,7 @@ const images = [
   "/images/dice5.png",
   "/images/dice6.png",
 ];
+let lastWorp = [];
 const rollDice = document.getElementById("roll-dice");
 const firstDice = document.querySelector(".dice1");
 const secondDice = document.querySelector(".dice2");
@@ -51,15 +52,21 @@ const countDice = () => {
   return dice;
 };
 
+const countScore = () => {
+  let combi = [];
+};
+
 const randomImages = (dice) => {
   let dicesChild = allDices.children;
   for (let i = 0; i < dice.length; i++) {
     dicesChild[i].src = images[dice[i] - 1];
   }
 };
+
 rollDice.addEventListener("click", () => {
   toggleButton();
   getRandomDice();
-  let tempNu = countDice();
-  randomImages(tempNu);
+  lastWorp = countDice();
+  randomImages(lastWorp);
+  console.log(lastWorp);
 });
