@@ -49,6 +49,12 @@ const countDice = () => {
     let tempRandomDice = getRandomDice();
     dice.push(tempRandomDice);
   }
+  const filterResult = dice.filter(checkScore);
+  function checkScore(dice) {
+    if (dice === 1) {
+      console.log("1 is geprint");
+    }
+  }
   return dice;
 };
 
