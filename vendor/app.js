@@ -42,31 +42,46 @@ console.log(allDices.children.length);
 const getRandomDice = () => {
   return Math.floor(Math.random() * 6) + 1;
 };
-
-const countDice = () => {
-  let dice = [];
-  for (let i = 0; i < 5; i++) {
-    let tempRandomDice = getRandomDice();
-    dice.push(tempRandomDice);
-  }
-  const filterResult = dice.filter(checkScore);
-  function checkScore(dice) {
-    if (dice === 1) {
-      console.log("1 is geprint");
-    }
-  }
-  return dice;
-};
-
-const countScore = () => {
-  let combi = [];
-};
-
 const randomImages = (dice) => {
   let dicesChild = allDices.children;
   for (let i = 0; i < dice.length; i++) {
     dicesChild[i].src = images[dice[i] - 1];
   }
+};
+
+const countDice = () => {
+  let dice = [];
+
+  for (let i = 0; i < 5; i++) {
+    let tempRandomDice = getRandomDice();
+    dice.push(tempRandomDice);
+  }
+  const filterResult = dice.filter(checkScore);
+
+  function checkScore(dice) {
+    let diceTotal = [];
+    if (dice === 1) {
+      diceTotal.push(1);
+      console.log(diceTotal);
+    }
+    if (dice === 2) {
+      diceTotal.push(2);
+    }
+    if (dice === 3) {
+      diceTotal.push(3);
+    }
+    if (dice === 4) {
+      diceTotal.push(4);
+    }
+    if (dice === 5) {
+      diceTotal.push(5);
+    }
+    if (dice === 6) {
+      diceTotal.push(6);
+    }
+  }
+
+  return dice;
 };
 
 rollDice.addEventListener("click", () => {
