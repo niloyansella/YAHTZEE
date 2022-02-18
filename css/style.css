@@ -96,7 +96,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid black;
+  border: 3px solid #2604d3;
 }
 .yahtzee--card {
   background-color: #ffffff;
@@ -122,5 +122,5 @@ header {
 
 .rollDice {
   animation-name: rollDice;
-  animation-duration: 2s;
+  animation-duration: 0.5s;
 }
