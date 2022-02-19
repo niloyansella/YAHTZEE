@@ -6,6 +6,7 @@ const images = [
   "/images/dice5.png",
   "/images/dice6.png",
 ];
+
 const rollDice = document.getElementById("roll-dice");
 const firstDice = document.querySelector(".dice1");
 const secondDice = document.querySelector(".dice2");
@@ -36,10 +37,15 @@ for (let i = 0; i < allDices.children.length; i++) {
   });
 }
 
-console.log(allDices.children.length);
-
 const getRandomDice = () => {
   return Math.floor(Math.random() * 6) + 1;
+};
+
+const randomImages = (dice) => {
+  let dicesChild = allDices.children;
+  for (let i = 0; i < dicesChild.length; i++) {
+    dicesChild[i].src = images[dice[i] - 1];
+  }
 };
 
 const countDice = () => {
@@ -52,12 +58,6 @@ const countDice = () => {
   return dice;
 };
 
-const randomImages = (dice) => {
-  let dicesChild = allDices.children;
-  for (let i = 0; i < dice.length; i++) {
-    dicesChild[i].src = images[dice[i] - 1];
-  }
-};
 rollDice.addEventListener("click", () => {
   toggleButton();
   getRandomDice();
