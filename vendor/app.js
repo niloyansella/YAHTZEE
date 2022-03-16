@@ -47,16 +47,52 @@ const randomImages = (dice) => {
     dicesChild[i].src = images[dice[i] - 1];
   }
 };
-
+let dice = [];
 const countDice = () => {
-  let dice = [];
+  dice = [];
   for (let i = 0; i < 5; i++) {
     let tempRandomDice = getRandomDice();
     dice.push(tempRandomDice);
   }
+
   console.log(dice);
   return dice;
 };
+let punt;
+
+const countSingleScore = (points, el) => {
+  let score = 0;
+  for (let i = 0; i < 5; i++) {
+    if (dice[i] === points) {
+      score++;
+    }
+  }
+  punt = parseInt(score * points);
+
+  el.innerHTML = punt;
+};
+const scoreOne = document.querySelector(".card-2");
+const scoreTwo = document.querySelector(".card-4");
+const scoreThird = document.querySelector(".card-6");
+const scoreFour = document.querySelector(".card-8");
+const scoreFives = document.querySelector(".card-10");
+const scoreSixes = document.querySelector(".card-12");
+
+scoreOne.addEventListener("click", countSingleScore.bind(null, 1, scoreOne));
+scoreTwo.addEventListener("click", countSingleScore.bind(null, 2, scoreTwo));
+scoreThird.addEventListener(
+  "click",
+  countSingleScore.bind(null, 3, scoreThird)
+);
+scoreFour.addEventListener("click", countSingleScore.bind(null, 4, scoreFour));
+scoreFives.addEventListener(
+  "click",
+  countSingleScore.bind(null, 5, scoreFives)
+);
+scoreSixes.addEventListener(
+  "click",
+  countSingleScore.bind(null, 6, scoreSixes)
+);
 
 rollDice.addEventListener("click", () => {
   toggleButton();
